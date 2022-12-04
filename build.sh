@@ -1,16 +1,9 @@
 export $(cat .env | xargs)
 
 build() {
-    terraform validate .
-    terraform plan
-    while true; do
-        read -p "Continue Terraform apply? [y/n] " yn
-        case $yn in
-            [Yy]* ) terraform apply; break;;
-            [Nn]* ) echo "exit"; exit;;
-            * ) echo "Please answer yes or no.";;
-        esac
-    done
+    terraform validate . && \
+    terraform plan && \
+    terraform apply
 }
 
 PS3="Select action: "
