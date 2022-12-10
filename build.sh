@@ -1,6 +1,7 @@
 export $(cat .env | xargs)
 
 build() {
+    terraform init && \
     terraform validate . && \
     terraform plan && \
     terraform apply

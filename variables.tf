@@ -5,3 +5,11 @@ variable "pm_api_url" {
 variable "target_node" {
   type = string
 }
+
+variable "pvt_key" {
+  type = string
+}
+
+variable "pub_key" {
+  type = string
+}
