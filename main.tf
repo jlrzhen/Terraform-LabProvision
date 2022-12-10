@@ -24,7 +24,6 @@ resource "proxmox_vm_qemu" "vm1" {
   memory = 2048
   cores  = 2
 	agent  = 1
-  machine = "q35"
 
 	provisioner "local-exec" {
     command = "ANSIBLE_HOST_KEY_CHECKING=False ansible all -m ping -u root -i '${self.ssh_host},' --private-key ${var.pvt_key} -e 'pub_key=${var.pub_key}'"
