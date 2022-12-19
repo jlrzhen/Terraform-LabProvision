@@ -33,7 +33,7 @@ resource "proxmox_vm_qemu" "vm1" {
   cores  = 2
 	agent  = 1
 
-	# Test SSH login
+  # Test SSH login
   provisioner "local-exec" {
     command = "ANSIBLE_HOST_KEY_CHECKING=False ansible all -m ping -u root -i '${self.ssh_host},' -i ./inventory/hosts"
   }
