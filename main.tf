@@ -36,12 +36,12 @@ resource "proxmox_vm_qemu" "vm1" {
 	# Test SSH login
   provisioner "local-exec" {
     command = "ANSIBLE_HOST_KEY_CHECKING=False ansible all -m ping -u root -i '${self.ssh_host},' -i ./inventory/hosts"
-	}
+  }
 
   # Run Ansible scripts (main.yml)
   provisioner "local-exec" {
     command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook main.yml -u root -i '${self.ssh_host},' -i ./inventory/hosts --extra-vars \"new_hostname=VM${count.index}\" --extra-vars \"ansible_become_password=${var.ansible_password}\""
-	}
+  }
 }
 
 output "vm_ip_addresses" {
