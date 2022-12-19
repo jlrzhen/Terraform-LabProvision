@@ -1,7 +1,3 @@
-variable "pm_api_url" {
-  type = string
-}
-
 variable "target_node" {
   type = string
 }
@@ -12,4 +8,12 @@ variable "ansible_user" {
 
 variable "ansible_password" {
   type = string
+}
+
+variable "vm_name" {
+  type = string
+}
+
+variable "vm_count" {
+  type = number
 }
