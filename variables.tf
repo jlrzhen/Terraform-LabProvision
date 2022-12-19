@@ -6,10 +6,12 @@ variable "target_node" {
   type = string
 }
 
-variable "pvt_key" {
+variable "ansible_user" {
   type = string
+  sensitive=true
 }
 
-variable "pub_key" {
+variable "ansible_password" {
   type = string
+  sensitive=true
 }

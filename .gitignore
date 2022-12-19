@@ -1,2 +1,4 @@
 .env
 *terraform*
+hosts
+inventory
