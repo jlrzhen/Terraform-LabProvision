@@ -41,3 +41,11 @@ module "workers" {
   vm_name = "TFworker"
   vm_count = 2
 }
+
+output "controllers_ip_addresses" {
+  value = "${module.controllers.vm_ip_addresses}"
+}
+
+output "workers_ip_addresses" {
+  value = "${module.workers.vm_ip_addresses}"
+}
